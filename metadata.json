@@ -1,0 +1,6 @@
+{
+  "name": "Nexora SalonOS",
+  "description": "Premium beauty industry operating system.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
