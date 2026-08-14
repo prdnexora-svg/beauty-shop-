@@ -1,4 +1,4 @@
-export type ViewType = 'splash' | 'welcome' | 'registration' | 'login' | 'forgot-password' | 'email-sent' | 'reset-password' | 'home' | 'discover' | 'distributor-directory' | 'distributor-profile' | 'shop' | 'product-detail' | 'checkout' | 'order-confirmation';
+export type ViewType = 'splash' | 'welcome' | 'registration' | 'login' | 'forgot-password' | 'email-sent' | 'reset-password' | 'home' | 'discover' | 'distributor-directory' | 'distributor-profile' | 'shop' | 'product-detail' | 'checkout' | 'order-confirmation' | 'orders' | 'social-feed' | 'create-content' | 'ai-content-studio';
 
 export interface Distributor {
     id: string;

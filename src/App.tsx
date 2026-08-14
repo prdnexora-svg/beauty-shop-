@@ -21,6 +21,10 @@ import ShopScreen from './components/ShopScreen';
 import ProductDetailScreen from './components/ProductDetailScreen';
 import CheckoutScreen from './components/CheckoutScreen';
 import OrderConfirmationScreen from './components/OrderConfirmationScreen';
+import OrdersScreen from './components/OrdersScreen';
+import SocialFeedScreen from './components/SocialFeedScreen';
+import CreateContentScreen from './components/CreateContentScreen';
+import AiContentStudioScreen from './components/AiContentStudioScreen';
 import LoadingOverlay from './components/LoadingOverlay';
 
 export default function App() {
@@ -89,6 +93,30 @@ export default function App() {
           className={`px-2.5 py-0.5 rounded-full font-bold transition-all ${currentView === 'order-confirmation' ? 'bg-rose-800 text-white' : 'text-slate-300 hover:text-white'}`}
         >
           Confirmation
+        </button>
+        <button 
+          onClick={() => navigate('orders')} 
+          className={`px-2.5 py-0.5 rounded-full font-bold transition-all ${currentView === 'orders' ? 'bg-rose-800 text-white' : 'text-slate-300 hover:text-white'}`}
+        >
+          Orders
+        </button>
+        <button 
+          onClick={() => navigate('social-feed')} 
+          className={`px-2.5 py-0.5 rounded-full font-bold transition-all ${currentView === 'social-feed' ? 'bg-rose-800 text-white' : 'text-slate-300 hover:text-white'}`}
+        >
+          Feed
+        </button>
+        <button 
+          onClick={() => navigate('create-content')} 
+          className={`px-2.5 py-0.5 rounded-full font-bold transition-all ${currentView === 'create-content' ? 'bg-rose-800 text-white' : 'text-slate-300 hover:text-white'}`}
+        >
+          Create
+        </button>
+        <button 
+          onClick={() => navigate('ai-content-studio')} 
+          className={`px-2.5 py-0.5 rounded-full font-bold transition-all ${currentView === 'ai-content-studio' ? 'bg-rose-800 text-white' : 'text-slate-300 hover:text-white'}`}
+        >
+          AI Studio
         </button>
       </div>
 
@@ -278,6 +306,58 @@ export default function App() {
             transition={{ duration: 0.5 }}
           >
             <OrderConfirmationScreen 
+              onNavigate={(view) => navigate(view)} 
+            />
+          </motion.div>
+        )}
+        {currentView === 'orders' && (
+          <motion.div
+            key="orders"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <OrdersScreen 
+              onNavigate={(view) => navigate(view)} 
+            />
+          </motion.div>
+        )}
+        {currentView === 'social-feed' && (
+          <motion.div
+            key="social-feed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <SocialFeedScreen 
+              onNavigate={(view) => navigate(view)} 
+            />
+          </motion.div>
+        )}
+        {currentView === 'create-content' && (
+          <motion.div
+            key="create-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <CreateContentScreen 
+              onNavigate={(view) => navigate(view)} 
+            />
+          </motion.div>
+        )}
+        {currentView === 'ai-content-studio' && (
+          <motion.div
+            key="ai-content-studio"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <AiContentStudioScreen 
               onNavigate={(view) => navigate(view)} 
             />
           </motion.div>
